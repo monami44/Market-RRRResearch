@@ -1,3 +1,4 @@
+import os
 from flask import Flask, send_from_directory, request, jsonify
 
 # Import your FinancialCrew classes from their respective modules
@@ -5,7 +6,7 @@ from main import FinancialCrew as FinancialCrew1
 from main2 import FinancialCrew as FinancialCrew2
 from main3 import FinancialCrew as FinancialCrew3
 from main4 import FinancialCrew as FinancialCrew4
-from main5 import FinancialCrew as FinancialCrew5  # New import for the Retail Design bot
+from main5 import FinancialCrew as FinancialCrew5  # Import for the Retail Design bot
 
 app = Flask(__name__, static_folder='static')
 
@@ -54,5 +55,6 @@ def analyze():
         # For any other exceptions
         return jsonify({'error': f'An unexpected error occurred: {e}'}), 500
 
+# Adjust the host and port settings for Vercel
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 8080)))
