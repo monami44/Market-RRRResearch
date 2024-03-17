@@ -29,7 +29,7 @@ Integration: Seamlessly integrate insights from all agents, ensuring the report 
     
   def summarize_and_create_market_research2(self, agent, company):
     return Task(description=dedent(f"""
-  Your task is to answer the questions on the specified company, drawing together insights from across various expert analyses. 
+  Your task is to answer the questions on the specified company, drawing together insights from across various expert analyses. Go one bu one question. 
 
 **Company Foundation and Legal Identity**
 * What is the legal Company name? Information from the Legal Company Name Researcher.
