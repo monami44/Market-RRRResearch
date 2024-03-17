@@ -55,6 +55,6 @@ def analyze():
         # For any other exceptions
         return jsonify({'error': f'An unexpected error occurred: {e}'}), 500
 
-# Adjust the host and port settings for Vercel
+
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 8080)))
+    app.run(host='0.0.0.0')
